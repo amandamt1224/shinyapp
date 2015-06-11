@@ -5,13 +5,13 @@ shinyUI(fluidPage(
   titlePanel( "Analysis"),
   
   navlistPanel(
-    
+    id = "navlist",
     source('sen_over.R', local=TRUE)$value,
-    source('sen_cntls.R', local=TRUE)$value,
-            
-    tabPanel("Sky_View"),
+    source('sen_cntls.R', local=TRUE)$value,    
+    source('sky_view.R', local=TRUE)$value,
     tabPanel("Sen_View"),
     source('sen_data.R', local=TRUE)$value,
+    
     widths = c(2,10)
     
     

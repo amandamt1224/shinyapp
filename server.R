@@ -1,8 +1,14 @@
 library(shiny)
+library(ggplot2)
 
 shinyServer(function(input, output){
- #probably use observe function here
   
+ 
+  output$plot <- renderPlot({
+    ggplot(mtcars, aes(x = factor(cyl))) + geom_bar(width=1, colour = "black") + coord_polar()
+    
+    
+  })
   
   
 
